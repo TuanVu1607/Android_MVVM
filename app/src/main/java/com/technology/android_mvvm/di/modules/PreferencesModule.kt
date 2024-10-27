@@ -1,8 +1,8 @@
 package com.technology.android_mvvm.di.modules
 
 import android.content.Context
-import com.technology.android_mvvm.data.local.prefs.PreferenceManager
-import com.technology.android_mvvm.data.local.prefs.Preferences
+import com.technology.android_mvvm.domain.repository.UserPreferencesRepository
+import com.technology.android_mvvm.data.local.prefs.UserPreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +15,6 @@ import javax.inject.Singleton
 object PreferencesModule {
     @Provides
     @Singleton
-    fun providePreferences(@ApplicationContext context: Context): Preferences =
-        PreferenceManager(context)
+    fun provideUserPreferences(@ApplicationContext context: Context): UserPreferencesRepository =
+        UserPreferences(context)
 }

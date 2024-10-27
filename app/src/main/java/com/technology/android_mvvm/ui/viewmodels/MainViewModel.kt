@@ -11,8 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    @ApplicationContext
-    private val context: Context,
+    @ApplicationContext private val context: Context,
     val loader: Loader,
     private val mainRepository: MainRepository
 ) : BaseViewModel(context, loader) {

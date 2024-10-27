@@ -5,9 +5,23 @@
     android:gravity="center">
 
     <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_centerInParent="true"
-        android:layout_margin="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="@dimen/base_m_p_s"
+        android:layout_marginTop="@dimen/base_m_p_s"
         android:progressTint="@color/orange_900" />
+
+    <TextView
+        android:id="@+id/tvLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/base_m_p_s"
+        android:text="@string/loading_text"
+        android:textColor="@color/orange_900"
+        android:textStyle="bold" />
+
 </RelativeLayout>
