@@ -1,4 +1,4 @@
-package com.technology.android_mvvm.di.anotations
+package com.technology.android_mvvm.di.annotations
 
 import javax.inject.Qualifier
 

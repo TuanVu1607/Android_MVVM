@@ -1,6 +1,6 @@
 package com.technology.android_mvvm.di.modules
 
-import com.technology.android_mvvm.di.anotations.ApplicationScope
+import com.technology.android_mvvm.di.annotations.ApplicationScope
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.technology.android_mvvm.data.local.db.dao.UserDao
 import com.technology.android_mvvm.data.local.db.entity.UserEntity
-import com.technology.android_mvvm.di.anotations.ApplicationScope
+import com.technology.android_mvvm.di.annotations.ApplicationScope
 import kotlinx.coroutines.CoroutineScope
 import javax.inject.Inject
 import javax.inject.Provider
