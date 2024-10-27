@@ -5,7 +5,9 @@ import com.google.gson.Gson
 import com.technology.android_mvvm.data.local.db.entity.UserEntity
 import com.technology.android_mvvm.domain.repository.UserPreferencesRepository
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class UserPreferences @Inject constructor(context: Context) : SharedPreferences(context),
     UserPreferencesRepository {
 
