@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.technology.android_mvvm.R
-import com.technology.android_mvvm.common.extensions.toApiErrorResponse
+import com.technology.android_mvvm.data.remote.extensions.toApiErrorResponse
 import com.technology.android_mvvm.common.extensions.toast
 import com.technology.android_mvvm.common.process.Loader
 import com.technology.android_mvvm.data.remote.response.ApiErrorResponse

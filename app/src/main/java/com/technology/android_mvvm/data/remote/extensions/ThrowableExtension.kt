@@ -1,4 +1,4 @@
-package com.technology.android_mvvm.common.extensions
+package com.technology.android_mvvm.data.remote.extensions
 
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException

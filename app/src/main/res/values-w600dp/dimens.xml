@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Base dimen-->
+    <!--Margin & Padding-->
+    <dimen name="base_m_p_s">16dp</dimen>
+    <dimen name="base_m_p_m">24dp</dimen>
+    <dimen name="base_m_p_l">32dp</dimen>
+    <dimen name="base_m_p_xl">40dp</dimen>
+    <dimen name="base_m_p_2xl">48dp</dimen>
+    <dimen name="base_m_p_3xl">56dp</dimen>
+    <dimen name="base_m_p_4xl">64dp</dimen>
+    <!--Icon size-->
+    <dimen name="base_icon_size">24dp</dimen>
+    <!--Text size-->
+    <dimen name="base_text_size">16sp</dimen>
+    <dimen name="base_text_header_size">22sp</dimen>
+    <dimen name="base_text_header_dialog_size">18sp</dimen>
+</resources>

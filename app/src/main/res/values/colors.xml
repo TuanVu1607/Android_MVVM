@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Base color-->
     <color name="transparent">#00000000</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="shimmer">#dddddd</color>
+
+    <!--Choose depend on your app-->
     <color name="common_window_background_color">@color/white</color>
     <color name="common_window_background_color_dark">@color/black</color>
     <color name="common_primary_color">@color/white</color>

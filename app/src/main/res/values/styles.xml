@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Theme-->
+    <style name="Theme.Application" parent="Base.Theme.Application">
+        <!-- Kích thước phông chữ mặc định, kích thước phông chữ của Nút, TextView -->
+        <item name="android:textSize">@dimen/base_text_size</item>
+    </style>
+</resources>
