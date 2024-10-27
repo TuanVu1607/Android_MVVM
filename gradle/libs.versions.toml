@@ -1,0 +1,154 @@
+########################################### VERSIONS ###############################################
+[versions]
+#Android Gradle Plugin
+agp = "8.5.2"
+
+#Material Design
+material = "1.12.0"
+
+#AppCompat
+appcompat = "1.7.0"
+
+#Activity
+activity = "1.9.3"
+
+#Layout
+constraintlayout = "2.1.4"
+
+#Navigation
+navigation = "2.8.3"
+
+#Testing
+junit = "4.13.2"
+junit-version = "1.2.1"
+espresso-core = "3.6.1"
+
+#Android Core
+android-core = "1.13.1"
+
+#Kotlin
+kotlin = "1.9.24"
+
+#KSP (Kotlin Symbol Processing)
+ksp = "1.9.0-1.0.12"
+
+#Dependency Injection
+hilt = "2.50"
+
+#Database
+room = "2.6.1"
+
+#Networking
+retrofit = "2.9.0"
+logging-interceptor = "4.11.0"
+
+#JSON Processing
+gson = "2.10.1"
+
+#Image Loading
+glide = "4.16.0"
+glide-ksp = "4.14.2"
+
+#Multidex
+multidex = "2.0.1"
+
+#Coroutines
+kotlin-coroutines = "1.8.1"
+
+#Lifecycle
+lifecycle = "2.8.6"
+
+#Preferences
+preference-ktx = "1.2.1"
+
+#Log
+timber = "5.0.1"
+
+########################################## LIBRARIES ###############################################
+[libraries]
+#Material Design
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+#AppCompat
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+
+#Activity
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+
+#Layout
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+#Navigation
+androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+
+#Testing
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit-version" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+
+#Android Core
+androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "android-core" }
+
+#Kotlin
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+
+#Dependency Injection
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+
+#Database
+room = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+#Networking
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "logging-interceptor" }
+
+#JSON Processing
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+#Image Loading
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+glide-ksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glide-ksp" }
+
+#Multidex
+androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
+
+#Coroutines
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin-coroutines" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
+
+#Lifecycle
+lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+
+#Preferences
+preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preference-ktx" }
+
+#Log
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber"}
+
+########################################### PLUGINS ################################################
+[plugins]
+#Android Gradle Plugin
+android-application = { id = "com.android.application", version.ref = "agp" }
+com-android-library = { id = "com.android.library", version.ref = "agp" }
+
+#Kotlin
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+#KSP (Kotlin Symbol Processing)
+com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+#Dependency Injection
+com-google-dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+#Navigation
+androidx-navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "navigation" }
+
+
