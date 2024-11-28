@@ -1,15 +1,11 @@
 package com.technology.android_mvvm.ui.activities
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.coroutineScope
-import com.technology.android_mvvm.R
-import com.technology.android_mvvm.common.process.Loader
 import com.technology.android_mvvm.common.process.LoadingDialog
 import com.technology.android_mvvm.databinding.ActivityMainBinding
 import com.technology.android_mvvm.ui.base.BaseActivity

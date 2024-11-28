@@ -4,4 +4,5 @@ object AppConstants {
     const val APP_DATABASE_NAME = "android-mvvm-db"
     const val API_ERROR = "API_ERROR"
     const val DATABASE_ERROR = "DATABASE_ERROR"
+    const val IMAGE_ERROR = "IMAGE_ERROR"
 }

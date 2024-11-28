@@ -9,5 +9,5 @@
     <string name="network_server_not_available">Our services are under maintenance, please retry after some time</string>
     <string name="something_went_wrong">Something went wrong, please try again.</string>
 
-    <string name="loading_text">Loading...</string>
+    <string name="loading_text">Loading…</string>
 </resources>
