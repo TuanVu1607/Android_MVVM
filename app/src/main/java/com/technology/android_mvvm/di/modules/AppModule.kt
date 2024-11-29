@@ -1,6 +1,5 @@
 package com.technology.android_mvvm.di.modules
 
-import com.technology.android_mvvm.common.process.Loader
 import com.technology.android_mvvm.data.remote.api.example.ApiService
 import com.technology.android_mvvm.data.repository.MainRepositoryImp
 import com.technology.android_mvvm.domain.repository.MainRepository
