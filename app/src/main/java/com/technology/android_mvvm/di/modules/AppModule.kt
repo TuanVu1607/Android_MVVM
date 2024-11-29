@@ -17,7 +17,7 @@ object AppModule {
     fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 
     @Provides
-    internal fun provideMainRepository(loader: Loader): MainRepository {
+    internal fun provideMainRepository(): MainRepository {
         return MainRepositoryImp()
     }
 }
