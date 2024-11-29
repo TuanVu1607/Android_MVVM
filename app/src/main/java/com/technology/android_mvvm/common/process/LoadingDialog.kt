@@ -1,10 +1,6 @@
 package com.technology.android_mvvm.common.process
 
-import android.app.Activity
-import android.app.AlertDialog
 import android.content.Context
-import android.graphics.drawable.ColorDrawable
-import android.view.LayoutInflater
 import androidx.lifecycle.LifecycleCoroutineScope
 import com.technology.android_mvvm.databinding.LoadingDialogBinding
 import com.technology.android_mvvm.ui.base.BaseDialog
