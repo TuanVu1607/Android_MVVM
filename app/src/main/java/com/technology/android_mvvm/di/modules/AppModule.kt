@@ -15,7 +15,6 @@ import javax.inject.Singleton
 @InstallIn(ViewModelComponent::class)
 object AppModule {
     @Provides
-    @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 
     @Provides
