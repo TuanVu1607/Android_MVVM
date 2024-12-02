@@ -17,8 +17,8 @@ plugins {
 
 ext {
     appId = "com.technology.android_mvvm"
-    appCompileSdkVersion = 34
-    appTargetSdkVersion = 34
+    appCompileSdkVersion = 35
+    appTargetSdkVersion = 35
     appMinSdkVersion = 23
     appVersionCode = 1
     appVersionName = "1.0.0"

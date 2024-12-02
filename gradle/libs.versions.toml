@@ -13,10 +13,10 @@ appcompat = "1.7.0"
 activity = "1.9.3"
 
 #Layout
-constraintlayout = "2.1.4"
+constraintlayout = "2.2.0"
 
 #Navigation
-navigation = "2.8.3"
+navigation = "2.8.4"
 
 #Testing
 junit = "4.13.2"
@@ -24,7 +24,7 @@ junit-version = "1.2.1"
 espresso-core = "3.6.1"
 
 #Android Core
-android-core = "1.13.1"
+android-core = "1.15.0"
 
 #Kotlin
 kotlin = "1.9.24"
@@ -56,13 +56,16 @@ multidex = "2.0.1"
 kotlin-coroutines = "1.8.1"
 
 #Lifecycle
-lifecycle = "2.8.6"
+lifecycle = "2.8.7"
 
 #Preferences
 preference-ktx = "1.2.1"
 
 #Log
 timber = "5.0.1"
+
+#Crypto
+security-crypto-ktx = "1.0.0"
 
 ########################################## LIBRARIES ###############################################
 [libraries]
@@ -130,6 +133,9 @@ preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = 
 
 #Log
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber"}
+
+#Crypto
+androidx-security-crypto-ktx = { group = "androidx.security", name = "security-crypto", version.ref = "security-crypto-ktx" }
 
 ########################################### PLUGINS ################################################
 [plugins]

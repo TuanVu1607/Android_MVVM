@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
-import com.technology.android_mvvm.data.local.prefs.SharedPreferences
+import com.technology.android_mvvm.data.local.prefs.BaseSharedPreferences
 import com.technology.android_mvvm.utils.LoggerUtils
 
 abstract class BaseActivity<VB : ViewBinding>(private val bindingFactory: (LayoutInflater) -> VB) : AppCompatActivity() {
@@ -14,7 +14,7 @@ abstract class BaseActivity<VB : ViewBinding>(private val bindingFactory: (Layou
     }
 
     protected lateinit var binding: VB
-    protected lateinit var sharedPref: SharedPreferences
+    protected lateinit var sharedPref: BaseSharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -2,7 +2,7 @@ package com.technology.android_mvvm.di.modules
 
 import android.content.Context
 import com.technology.android_mvvm.domain.repository.UserPreferencesRepository
-import com.technology.android_mvvm.data.local.prefs.UserPreferences
+import com.technology.android_mvvm.data.local.prefs.EncryptedUserSharedPreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,5 +16,5 @@ object PreferencesModule {
     @Provides
     @Singleton
     fun provideUserPreferences(@ApplicationContext context: Context): UserPreferencesRepository =
-        UserPreferences(context)
+        EncryptedUserSharedPreferences(context)
 }
