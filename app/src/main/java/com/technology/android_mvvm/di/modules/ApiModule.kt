@@ -1,6 +1,5 @@
 package com.technology.android_mvvm.di.modules
 
-import com.squareup.moshi.Moshi
 import com.technology.android_mvvm.BuildConfig
 import com.technology.android_mvvm.data.remote.api.example.ApiService
 import dagger.Module
@@ -10,7 +9,6 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Converter
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -18,10 +16,6 @@ object ApiModule {
 
     @Provides
     fun provideBaseApiUrl() = BuildConfig.HOST_URL
-
-    @Provides
-    fun provideMoshiConverterFactory(moshi: Moshi): Converter.Factory =
-        MoshiConverterFactory.create(moshi)
 
     @Provides
     fun provideRetrofit(

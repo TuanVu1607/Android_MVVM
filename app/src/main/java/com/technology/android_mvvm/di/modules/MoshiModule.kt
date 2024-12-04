@@ -7,6 +7,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import retrofit2.Converter
+import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.Date
 
 @Module
@@ -19,4 +21,8 @@ object MoshiModule {
             .add(Date::class.java, Rfc3339DateJsonAdapter())
             .add(KotlinJsonAdapterFactory())
             .build()
+
+    @Provides
+    fun provideMoshiConverterFactory(moshi: Moshi): Converter.Factory =
+        MoshiConverterFactory.create(moshi)
 }
