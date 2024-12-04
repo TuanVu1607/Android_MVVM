@@ -13,6 +13,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object PreferencesModule {
+
     @Provides
     @Singleton
     fun provideUserPreferences(@ApplicationContext context: Context): UserPreferencesRepository =
