@@ -14,7 +14,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 abstract class BaseViewModel(
-    private val context: Context,
+    private val applicationContext: Context,
     private val loader: Loader
 ) : ViewModel() {
 
@@ -62,27 +62,27 @@ abstract class BaseViewModel(
         when (err.status) {
             ApiErrorResponse.Status.HTTP_BAD_GATEWAY,
             ApiErrorResponse.Status.REMOTE_CONNECTION_ERROR ->
-                context.toast(context.getString(R.string.server_connection_error))
+                applicationContext.toast(applicationContext.getString(R.string.server_connection_error))
 
             ApiErrorResponse.Status.NETWORK_CONNECTION_ERROR ->
-                context.toast(context.getString(R.string.no_internet_connection))
+                applicationContext.toast(applicationContext.getString(R.string.no_internet_connection))
 
             ApiErrorResponse.Status.HTTP_UNAUTHORIZED,
             ApiErrorResponse.Status.HTTP_BAD_REQUEST,
             ApiErrorResponse.Status.HTTP_NOT_FOUND ->
-                err.message.let { context.toast(it) }
+                err.message.let { applicationContext.toast(it) }
 
             ApiErrorResponse.Status.HTTP_FORBIDDEN ->
-                context.toast(context.getString(R.string.permission_not_available))
+                applicationContext.toast(applicationContext.getString(R.string.permission_not_available))
 
             ApiErrorResponse.Status.HTTP_INTERNAL_ERROR ->
-                context.toast(context.getString(R.string.network_internal_error))
+                applicationContext.toast(applicationContext.getString(R.string.network_internal_error))
 
             ApiErrorResponse.Status.HTTP_UNAVAILABLE ->
-                context.toast(context.getString(R.string.network_server_not_available))
+                applicationContext.toast(applicationContext.getString(R.string.network_server_not_available))
 
             ApiErrorResponse.Status.UNKNOWN ->
-                context.toast(context.getString(R.string.something_went_wrong))
+                applicationContext.toast(applicationContext.getString(R.string.something_went_wrong))
         }
     }
 }
