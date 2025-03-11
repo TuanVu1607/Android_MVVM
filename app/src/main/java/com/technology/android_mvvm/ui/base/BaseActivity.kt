@@ -4,22 +4,28 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
-import com.technology.android_mvvm.data.local.prefs.BaseSharedPreferences
-import com.technology.android_mvvm.utils.LoggerUtils
 
-abstract class BaseActivity<VB : ViewBinding>(private val bindingFactory: (LayoutInflater) -> VB) : AppCompatActivity() {
+abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
-    companion object{
-        const val TAG = "BaseActivity"
-    }
+    private var _binding: ViewBinding? = null
 
-    protected lateinit var binding: VB
-    protected lateinit var sharedPref: BaseSharedPreferences
+    protected abstract val bindingInflater: (LayoutInflater) -> VB
+
+    @Suppress("UNCHECKED_CAST")
+    protected val binding: VB
+        get() = _binding as VB
+
+    protected abstract val viewModel: BaseViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        LoggerUtils.i(TAG, "onCreate()")
-        binding = bindingFactory(layoutInflater)
-        setContentView(binding.root)
+        setContentView(bindingInflater.invoke(layoutInflater).apply {
+            _binding = this
+        }.root)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

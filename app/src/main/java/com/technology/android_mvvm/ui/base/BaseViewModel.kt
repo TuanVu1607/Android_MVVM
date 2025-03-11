@@ -2,61 +2,43 @@ package com.technology.android_mvvm.ui.base
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.technology.android_mvvm.R
-import com.technology.android_mvvm.data.remote.extensions.toApiErrorResponse
 import com.technology.android_mvvm.common.extensions.toast
-import com.technology.android_mvvm.common.process.Loader
+import com.technology.android_mvvm.data.remote.extensions.toApiErrorResponse
 import com.technology.android_mvvm.data.remote.response.ApiErrorResponse
+import com.technology.android_mvvm.ui.common.Loader
 import com.technology.android_mvvm.utils.LoggerUtils
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onStart
+import javax.inject.Inject
 
 abstract class BaseViewModel(
-    private val applicationContext: Context,
-    private val loader: Loader
+    private val applicationContext: Context
 ) : ViewModel() {
 
     companion object {
         const val TAG = "BaseViewModel"
     }
 
-    protected fun launchNetwork(
+    @Inject
+    lateinit var loader: Loader
+
+    protected fun <T> Flow<T>.launchNetwork(
         silent: Boolean = false,
-        error: (ApiErrorResponse) -> Unit = {},
-        block: suspend CoroutineScope.() -> Unit
-    ) {
-        if (!silent) {
-            loader.start()
-            viewModelScope.launch {
-                try {
-                    block()
-                } catch (e: Throwable) {
-                    if (e is CancellationException) return@launch
-                    val errorResponse = e.toApiErrorResponse()
-                    handleNetworkError(errorResponse)
-                    error(errorResponse)
-                    LoggerUtils.d(TAG, e)
-                    //LoggerUtils.record(e)
-                } finally {
-                    loader.stop()
-                }
-            }
-        } else {
-            viewModelScope.launch {
-                try {
-                    block()
-                } catch (e: Throwable) {
-                    if (e is CancellationException) return@launch
-                    val errorResponse = e.toApiErrorResponse()
-                    error(errorResponse)
-                    LoggerUtils.d(TAG, e)
-                    //LoggerUtils.record(e)
-                }
-            }
-        }
-    }
+        errorHandle: (ApiErrorResponse) -> Unit = {},
+    ): Flow<T> = this
+        .onStart { if (!silent) loader.start() }
+        .onCompletion { if (!silent) loader.stop() }
+        .catch { e ->
+            val errorResponse = e.toApiErrorResponse()
+            handleNetworkError(errorResponse)
+            LoggerUtils.d(TAG, e)
+            errorHandle(errorResponse)
+        }.flowOn(Dispatchers.IO)
 
     private fun handleNetworkError(err: ApiErrorResponse) {
         when (err.status) {

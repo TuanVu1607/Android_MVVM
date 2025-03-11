@@ -31,7 +31,6 @@ android {
 
         multiDexEnabled true
         buildFeatures.buildConfig true
-        buildConfigField('boolean', 'DEBUG', '' + DEBUG + '')
         buildConfigField('String', 'HOST_URL', '"' + HOST_URL + '"')
     }
 

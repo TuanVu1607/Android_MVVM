@@ -5,7 +5,6 @@ import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import androidx.viewbinding.ViewBinding
-import com.technology.android_mvvm.utils.LoggerUtils
 
 abstract class BaseDialog<VB : ViewBinding>(
     context: Context,
@@ -13,14 +12,9 @@ abstract class BaseDialog<VB : ViewBinding>(
     private val cancelable: Boolean = true
 ) : AlertDialog(context) {
 
-    companion object {
-        const val TAG = "BaseDialog"
-    }
-
     protected lateinit var binding: VB
 
     init {
-        LoggerUtils.i(TAG, "initDialog()")
         initDialog()
     }
 

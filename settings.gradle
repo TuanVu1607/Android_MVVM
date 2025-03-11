@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Android_MVVM"
 include ':app'
+include ':lib'

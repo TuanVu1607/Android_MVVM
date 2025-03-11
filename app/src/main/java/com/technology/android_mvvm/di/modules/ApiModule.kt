@@ -2,6 +2,8 @@ package com.technology.android_mvvm.di.modules
 
 import com.technology.android_mvvm.BuildConfig
 import com.technology.android_mvvm.data.remote.api.example.ApiService
+import com.technology.android_mvvm.data.remote.providers.ApiServiceProvider.getApiService
+import com.technology.android_mvvm.data.remote.providers.RetrofitProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,14 +24,10 @@ object ApiModule {
         baseApiUrl: String,
         okHttpClient: OkHttpClient,
         converterFactory: Converter.Factory
-    ): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(baseApiUrl)
-            .client(okHttpClient)
-            .addConverterFactory(converterFactory)
-            .build()
-    }
+    ): Retrofit = RetrofitProvider
+        .getRetrofitBuilder(baseApiUrl, okHttpClient, converterFactory)
+        .build()
 
     @Provides
-    fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
+    fun provideApiService(retrofit: Retrofit): ApiService = getApiService(retrofit)
 }

@@ -11,6 +11,6 @@ object TextUtils {
         view.ellipsize = android.text.TextUtils.TruncateAt.MARQUEE
         view.marqueeRepeatLimit = -1 // Repeat indefinitely
         view.maxLines = 1 // Limit 1 lines displayed
-        view.isSelected = true // Enable marquee effect
+        view.isSelected = isMarqueeEnabled // Enable marquee effect
     }
 }

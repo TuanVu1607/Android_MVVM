@@ -1,10 +1,10 @@
-package com.technology.android_mvvm.common.process
+package com.technology.android_mvvm.ui.dialogs
 
 import android.content.Context
 import androidx.lifecycle.LifecycleCoroutineScope
+import com.technology.android_mvvm.ui.common.Loader
 import com.technology.android_mvvm.databinding.LoadingDialogBinding
 import com.technology.android_mvvm.ui.base.BaseDialog
-import com.technology.android_mvvm.utils.LoggerUtils
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -17,10 +17,8 @@ class LoadingDialog(
     LoadingDialogBinding::inflate,
     false
 ) {
-    private val TAG = LoadingDialog::class.java.simpleName
 
     init {
-        LoggerUtils.i(TAG, "initDialog()")
         listenLoader()
     }
 

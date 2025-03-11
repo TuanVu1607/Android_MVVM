@@ -1,4 +1,4 @@
-package com.technology.android_mvvm.common.process
+package com.technology.android_mvvm.ui.common
 
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import kotlinx.coroutines.flow.MutableStateFlow

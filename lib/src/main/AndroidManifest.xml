@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Permission for network connection -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+        <!-- Add this to app's manifest file inside application tag -->
+        <!--    <meta-data-->
+        <!--        android:name="com.google.android.gms.ads.APPLICATION_ID"-->
+        <!--        android:value="${app_ads_id}" />-->
+</manifest>
